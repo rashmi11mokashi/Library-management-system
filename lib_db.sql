@@ -1,0 +1,11 @@
+create database library;
+show databases;
+drop database library;
+use library;
+show tables;
+create table student(stud_id int,stud_name varchar(20),emailid varchar(20));
+create table lib(bookname varchar(20),author varchar(20),publication varchar(20));
+create table person(id int auto_increment,prof varchar(11),usrname varchar(25),emailid varchar(30),pswd1 varchar(25),pswd2 varchar(25),primary key(id));
+create table lib_admin(admin_id int,admin_name varchar(10),emailid varchar(30));
+create table book_entry(book_id int auto_increment,bookname varchar(20) references lib(bookname),stud_id int references student(stud_id),primary key(book_id));
+select * from lib;
